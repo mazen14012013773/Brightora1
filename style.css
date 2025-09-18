@@ -1,0 +1,73 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  direction: rtl;
+  overflow-x: hidden;
+  color: #fff;
+  height: 100%;
+  background: linear-gradient(270deg, #ff0000, #ff9900, #ffff00, #00ff00, #00ffff, #0000ff, #9900ff);
+  background-size: 1400% 1400%;
+  animation: rainbowBG 25s ease infinite;
+}
+
+@keyframes rainbowBG {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: auto;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 60px;
+  margin-bottom: 30px;
+  text-shadow: 3px 3px 15px #000;
+  animation: glow 2s ease-in-out infinite alternate, fadeInDown 1s ease forwards;
+}
+
+@keyframes glow {
+  0% {text-shadow: 0 0 5px #ffeb3b,0 0 10px #ffeb3b,0 0 20px #ffeb3b;}
+  100% {text-shadow:0 0 15px #fff,0 0 30px #fff,0 0 60px #ffeb3b;}
+}
+
+@keyframes fadeInDown {0% {opacity:0; transform: translateY(-50px);}100% {opacity:1; transform: translateY(0);}}
+.description {font-size:18px; line-height:1.7; max-width:800px; margin:20px auto; text-shadow:1px 1px 5px #000; animation: fadeIn 2s ease forwards; opacity:0;}
+@keyframes fadeIn {0% {opacity:0;} 100% {opacity:1;}}
+button {
+  padding: 18px 35px;
+  font-size: 22px;
+  cursor: pointer;
+  background-color: #f1c40f;
+  border: none;
+  border-radius: 15px;
+  color: #000;
+  margin-top: 40px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+  position: relative;
+  animation: pulseButton 2s infinite alternate;
+}
+@keyframes pulseButton {0% {transform: scale(1);}50% {transform: scale(1.1);}100% {transform: scale(1);}}
+button:hover {background-color: #f39c12; box-shadow: 0 10px 35px rgba(0,0,0,0.8);}
+.progress-container {width:80%; background-color:#333; border-radius:15px; margin:30px auto; display:none; overflow:hidden;}
+.progress-bar {height:35px; width:0%; background-color:yellow; text-align:center; line-height:35px; font-weight:bold; color:#000; transition: width 0.2s ease;}
+.success {background-color:#2ecc71 !important; color:#fff; box-shadow:0 0 50px #2ecc71; animation: pulse 1s infinite alternate;}
+@keyframes pulse {0% {box-shadow:0 0 20px #2ecc71;} 100% {box-shadow:0 0 50px #2ecc71;}}
+.description strong {color:#ffeb3b;}
+footer {text-align:center; font-size:16px; margin-top:50px; text-shadow:1px 1px 3px #000;}
+@media(max-width:600px){h1{font-size:40px;}button{font-size:18px;padding:15px 25px;}.description{font-size:16px;}}
